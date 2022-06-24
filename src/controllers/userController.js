@@ -16,6 +16,7 @@ class UserController {
         res.status(400).send({message: `${err.message} - Id do usuário não localizado.`})
       } else {
         res.status(200).send(users);
+        
       }
     })
   }
