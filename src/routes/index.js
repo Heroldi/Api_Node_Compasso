@@ -8,7 +8,7 @@ const routes = (app) => {
     res.status(200).send({name: "Curso de node"})
   })
 
-
+  
   app.use(
     express.json(),
     users,
