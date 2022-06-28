@@ -17,7 +17,7 @@ class TaskController {
       .populate('user', 'name')
       .exec((err, tasks) => {
       if(err) {
-        res.status(400).send({message: `${err.message} - Id da task não localizado.`})
+        res.status(400).send({message: `${err.message} - ID not found.`})
       } else {
         res.status(200).send(tasks);
       }
@@ -30,7 +30,7 @@ class TaskController {
     task.save((err) => {
 
       if(err) {
-        res.status(500).send({message: `${err.message} - falha ao cadastrar task.`})
+        res.status(500).send({message: `${err.message} - Failed to register task.`})
       } else {
         res.status(201).send(task.toJSON())
       }
@@ -42,7 +42,7 @@ class TaskController {
 
     tasks.findByIdAndUpdate(id, {$set: req.body}, (err) => {
       if(!err) {
-        res.status(200).send({message: 'Task atualizado com sucesso'})
+        res.status(200).send({message: 'Task updated successfully'})
       } else {
         res.status(500).send({message: err.message})
       }
@@ -54,7 +54,7 @@ class TaskController {
 
     tasks.findByIdAndDelete(id, (err) => {
       if(!err){
-        res.status(200).send({message: 'Livro removido com sucesso'})
+        res.status(200).send({message: 'Task successfully removed'})
       } else {
         res.status(500).send({message: err.message})
       }

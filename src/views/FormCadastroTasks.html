@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task register</title>
+  </head>
+  <body>
+    <form method="post" id="form_task">
+      <input id="description" type="text" name="description" placeholder="Description" />
+      <input id="date" type="text" name="date" placeholder="Date" />
+      <select id="user" name="User">
+      </select>
+    </form>
+    <button type="submit" form="form_task" id="btn_task" onclick="GetDadosTask()">Send</button>
+  </body>
+  <script src="../controllers/GetDadosTask.js"></script>
+  <script src="../controllers//GetDadosDBTask.js"></script>
+</html>

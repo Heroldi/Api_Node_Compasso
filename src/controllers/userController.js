@@ -3,8 +3,12 @@ import users from "../models/User.js";
 class UserController {
 
   static listarUsers = (req, res) => {
-    users.find((err, users) => {
-        res.status(200).json(users)
+    users.find((err, users) => {      
+        if(err){
+          res.status(400).send({message: `${err.message} - Users not found.`})
+        }else{
+          res.status(200).json(users)
+        }
     })
   }
 
