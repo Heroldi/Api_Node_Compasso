@@ -170,7 +170,7 @@ function showUsers() {
 
         // add a button that alert "hello world"
         let button = document.createElement("button");
-        button.innerHTML = "Edit";
+        button.innerHTML = "Edit User";
         button.classList.add("btn", "btn-primary");
         button.addEventListener("click", function () {
           // make all inputs editable
@@ -190,9 +190,9 @@ function showUsers() {
 
           // if clicked again, make all inputs readonly
           button.addEventListener("click", function () {
-            alert(user.id);
+            // alert(user.id);
             let idteste = user.id;
-            alert(idteste);
+            // alert(idteste);
             this.id = user.id;
             function updateUser() {
               let user = {
@@ -226,9 +226,50 @@ function showUsers() {
             }
             updateUser();
             button.innerHTML = "Edit";
+            inputName.readOnly = true;
+            inputCpf.readOnly = true;
+            inputBirthdate.readOnly = true;
+            inputEmail.readOnly = true;
+            inputPassword.readOnly = true;
+            inputAdress.readOnly = true;
+            inputNumber.readOnly = true;
+            inputComplement.readOnly = true;
+            inputCity.readOnly = true;
+            inputState.readOnly = true;
+            inputCountry.readOnly = true;
+            inputZipcode.readOnly = true;
+
+            alert("User updated!");
           });
         });
+        // add a button id="delete" class="btn btn-primary" type="button" value="Edit"
+        let buttonEdit = document.createElement("button");
+        buttonEdit.id = "edit";
+        buttonEdit.innerHTML = "Delete User";
+        buttonEdit.classList.add("btn", "btn-danger");
+        buttonEdit.type = "button";
+        buttonEdit.value = "Edit";
+        li.appendChild(buttonEdit);
+        // add a event listener to the button that alert hello world
+        buttonEdit.addEventListener("click", function () {
+          // execute a fetch to delete the current user
+          fetch("http://localhost:3000/api/v1/users/" + user.id, {
+            method: "DELETE",
+          });
+          alert("User deleted!");
+          // remove the current user from the list
+          li.remove();
+        });
+        // make btn-danger 50px margin-right
+        buttonEdit.style.marginRight = "50px";
+        // make btn-danger 20px margin top
+        buttonEdit.style.marginTop = "20px";
+        // make btn-primary 20px margin top
+        button.style.marginTop = "20px";
+
         li.appendChild(button);
+        // make body margin top 100px
+        document.body.style.marginBottom = "80px";
       });
       document.body.appendChild(ul);
     });
