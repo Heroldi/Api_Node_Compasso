@@ -1,3 +1,18 @@
+ul {
+  display: flex;
+  flex-direction: row;
+}
+ul li {
+  margin-right: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+}
+ul li .form-control {
+  min-width: 20%;
+  max-width: 100%;
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -22,7 +37,7 @@ body .container form .form-group label {
   margin-bottom: 2%;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
-body #btn {
+body #btn_user {
   margin-left: 2%;
   margin-top: 1%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -42,7 +57,7 @@ body #btn {
   transition-property: all;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
-body #btn :hover {
+body #btn_user :hover {
   color: #000;
   background: rgb(255, 218, 87);
 }/*# sourceMappingURL=style.css.map */

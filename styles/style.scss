@@ -1,3 +1,18 @@
+ul {
+  display: flex;
+  flex-direction: row;
+  li {
+    margin-right: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 100%;
+    .form-control {
+      min-width: 20%;
+      max-width: 100%;
+    }
+  }
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -22,7 +37,7 @@ body {
       }
     }
   }
-  #btn {
+  #btn_user {
     margin-left: 2%;
     margin-top: 1%;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
