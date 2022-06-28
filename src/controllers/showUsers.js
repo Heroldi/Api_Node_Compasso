@@ -275,3 +275,10 @@ function showUsers() {
     });
 }
 showUsers();
+
+// if button Class ="btn btn-dark" is clicked, alert the search value
+// let button = document.querySelector(".btn-dark");
+// let searchUser = document.querySelector("#search-id");
+// button.addEventListener("click", function () {
+//   alert(searchUser.value);
+// });
