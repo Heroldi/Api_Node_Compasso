@@ -60,4 +60,93 @@ body #btn_user {
 body #btn_user :hover {
   color: #000;
   background: rgb(255, 218, 87);
+}
+
+#body-task {
+  margin-left: 4%;
+  margin-right: 4%;
+  display: flex;
+}
+#body-task #description {
+  min-height: 70px;
+  min-width: 500px;
+}
+#body-task form {
+  max-width: 20%;
+}
+#body-task .form-group {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  flex-basis: 100%;
+  min-width: 20%;
+  max-width: 50%;
+}
+#body-task .form-group label {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+#body-task #btn_task {
+  max-height: 8%;
+  margin-left: 15%;
+  margin-top: 3.3%;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  display: inline-block;
+  outline: 0;
+  cursor: pointer;
+  border: 2px solid #000;
+  border-radius: 3px;
+  color: #fff;
+  background: #000;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 28px;
+  padding: 12px 20px;
+  text-align: center;
+  transition-duration: 0.15s;
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+#body-task #btn_task :hover {
+  color: #000;
+  background: rgb(255, 218, 87);
+}
+#body-task .select-dropdown,
+#body-task .select-dropdown * {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  box-sizing: border-box;
+}
+#body-task .select-dropdown {
+  position: relative;
+  background-color: #e6e6e6;
+  border-radius: 4px;
+}
+#body-task .select-dropdown select {
+  font-size: 1rem;
+  font-weight: normal;
+  max-width: 100%;
+  padding: 8px 24px 8px 10px;
+  border: none;
+  background-color: transparent;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+#body-task .select-dropdown select:active,
+#body-task .select-dropdown select:focus {
+  outline: none;
+  box-shadow: none;
+}
+#body-task .select-dropdown:after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  width: 0;
+  height: 0;
+  margin-top: -2px;
+  border-top: 5px solid #aaa;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
 }/*# sourceMappingURL=style.css.map */

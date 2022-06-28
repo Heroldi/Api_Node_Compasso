@@ -4,17 +4,57 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/styles/reset.css" />
+    <link rel="stylesheet" href="/styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+
     <title>Task register</title>
   </head>
-  <body>
-    <form method="post" id="form_task">
-      <input id="description" type="text" name="description" placeholder="Description" />
-      <input id="date" type="text" name="date" placeholder="Date" />
-      <select id="user" name="User">
-      </select>
+  <body id="body-task">
+    <form>
+      <div class="form-group"></div>
+      <div class="form-group">
+        <label for="name">Description</label>
+        <input
+          type="text"
+          class="form-control"
+          id="description"
+          aria-describedby="emailHelp"
+          placeholder="Description"
+        />
+      </div>
+      <div class="form-group">
+        <label for="cpf">Task Date</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          aria-describedby="emailHelp"
+          placeholder="Data de nascimento"
+          min="2022-06-28"
+          max="2100-12-30"
+          onchange="Validacoes()"
+        />
+      </div>
+      <div class="select-dropdown">
+        <select id="user" name="User"></select>
+      </div>
     </form>
-    <button type="submit" form="form_task" id="btn_task" onclick="GetDadosTask()">Send</button>
+    <button
+      type="submit"
+      form="form_task"
+      id="btn_task"
+      onclick="GetDadosTask()"
+    >
+      Send
+    </button>
   </body>
   <script src="../controllers/GetDadosTask.js"></script>
   <script src="../controllers//GetDadosDBTask.js"></script>
+  <script src="/src/controllers/Validacoes.js"></script>
 </html>
