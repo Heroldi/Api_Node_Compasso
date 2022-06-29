@@ -8,6 +8,7 @@ function showUsers() {
         let li = document.createElement("li");
         li.innerHTML = "";
         ul.appendChild(li);
+        li.classList.add("search");
 
         user.id = user._id;
 
@@ -34,6 +35,7 @@ function showUsers() {
         inputCpf.readOnly = true;
         inputCpf.value = user.cpf;
         li.appendChild(inputCpf);
+        inputCpf.classList.add("cpf");
 
         let labelBirthdate = document.createElement("label");
         labelBirthdate.innerHTML = "Birthdate";

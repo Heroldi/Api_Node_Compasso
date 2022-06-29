@@ -32,10 +32,19 @@
           List Tasks
         </button>
       </div>
+      <input
+        id="searchbar"
+        onkeyup="searchCpf()"
+        type="text"
+        name="search"
+        placeholder="Search by CPF.."
+      />
+      
     </div>
   </header>
   <body id="body-show-task">
     <script src="/src/controllers/showUsers.js"></script>
     <script src="/src/controllers/BtnsRedirects.js"></script>
+    <script src="/src/controllers/SearchCpf.js"></script>
   </body>
 </html>

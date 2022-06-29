@@ -244,6 +244,24 @@ body {
 
 #header-listUser {
   margin-bottom: 1%;
+  #searchbar {
+    padding-left: 10px;
+    font-size: 1rem;
+    font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+    width: 350px;
+    height: 40px;
+    margin-top: 1.5%;
+    margin-left: 0.3%;
+    // make border radius
+    border-radius: 5px;
+    border: 2px solid #000;
+  }
+  // if #searchbar is clicked, make a little animation
+  #searchbar:focus {
+    outline: none;
+    box-shadow: none;
+    border: 2px solid rgb(0, 0, 0);
+  }
 }
 #header-listTasks {
   margin-bottom: 1%;
