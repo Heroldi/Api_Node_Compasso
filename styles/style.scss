@@ -1,3 +1,13 @@
+header {
+  margin-top: 2%;
+  margin-left: 1%;
+}
+label {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  //make bold
+  font-weight: bold;
+}
+
 ul {
   display: flex;
   flex-direction: row;
@@ -67,9 +77,15 @@ body {
 }
 
 #body-task {
-  margin-left: 4%;
+  margin-left: 2%;
   margin-right: 4%;
   display: flex;
+  flex-direction: column;
+
+  header {
+    width: 100%;
+    margin-left: -1%;
+  }
 
   #description {
     min-height: 70px;
@@ -91,7 +107,7 @@ body {
   }
   #btn_task {
     max-height: 8%;
-    margin-left: 15%;
+    max-width: 10%;
     margin-top: 3.3%;
     font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
       sans-serif;
@@ -116,12 +132,12 @@ body {
     }
   }
 
-  * {
-    margin: 0;
-    padding: 0;
-    position: relative;
-    box-sizing: border-box;
-  }
+  // * {
+  //   margin: 0;
+  //   padding: 0;
+  //   position: relative;
+  //   box-sizing: border-box;
+  // }
 
   html,
   body {
@@ -182,27 +198,28 @@ body {
   }
 }
 
-
 /* CSS */
 .button-40 {
   background-color: #111827;
   border: 1px solid transparent;
-  border-radius: .75rem;
+  border-radius: 0.75rem;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   flex: 0 0 auto;
-  font-family: "Inter var",ui-sans-serif,system-ui,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.5rem;
-  padding: .75rem 1.2rem;
+  padding: 0.75rem 1.2rem;
   text-align: center;
-  text-decoration: none #6B7280 solid;
+  text-decoration: none #6b7280 solid;
   text-decoration-thickness: auto;
-  transition-duration: .2s;
-  transition-property: background-color,border-color,color,fill,stroke;
-  transition-timing-function: cubic-bezier(.4, 0, 0.2, 1);
+  transition-duration: 0.2s;
+  transition-property: background-color, border-color, color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
   -webkit-user-select: none;
   touch-action: manipulation;
@@ -221,6 +238,16 @@ body {
 
 @media (min-width: 768px) {
   .button-40 {
-    padding: .75rem 1.5rem;
+    padding: 0.75rem 1.5rem;
   }
+}
+
+#header-listUser {
+  margin-bottom: 1%;
+}
+#header-listTasks {
+  margin-bottom: 1%;
+}
+#header-registerUser {
+  margin-bottom: -1%;
 }

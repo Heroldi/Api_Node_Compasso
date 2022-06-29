@@ -1,3 +1,13 @@
+header {
+  margin-top: 2%;
+  margin-left: 1%;
+}
+
+label {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: bold;
+}
+
 ul {
   display: flex;
   flex-direction: row;
@@ -64,9 +74,14 @@ body #btn_user :hover {
 }
 
 #body-task {
-  margin-left: 4%;
+  margin-left: 2%;
   margin-right: 4%;
   display: flex;
+  flex-direction: column;
+}
+#body-task header {
+  width: 100%;
+  margin-left: -1%;
 }
 #body-task #description {
   min-height: 70px;
@@ -88,7 +103,7 @@ body #btn_user :hover {
 }
 #body-task #btn_task {
   max-height: 8%;
-  margin-left: 15%;
+  max-width: 10%;
   margin-top: 3.3%;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
   display: inline-block;
@@ -110,12 +125,6 @@ body #btn_user :hover {
 #body-task #btn_task :hover {
   color: #000;
   background: rgb(255, 218, 87);
-}
-#body-task * {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  box-sizing: border-box;
 }
 #body-task html,
 #body-task body {
@@ -176,7 +185,7 @@ body #btn_user :hover {
   border: 1px solid transparent;
   border-radius: 0.75rem;
   box-sizing: border-box;
-  color: #FFFFFF;
+  color: #ffffff;
   cursor: pointer;
   flex: 0 0 auto;
   font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -185,8 +194,8 @@ body #btn_user :hover {
   line-height: 1.5rem;
   padding: 0.75rem 1.2rem;
   text-align: center;
-  -webkit-text-decoration: none #6B7280 solid;
-          text-decoration: none #6B7280 solid;
+  -webkit-text-decoration: none #6b7280 solid;
+          text-decoration: none #6b7280 solid;
   text-decoration-thickness: auto;
   transition-duration: 0.2s;
   transition-property: background-color, border-color, color, fill, stroke;
@@ -213,4 +222,15 @@ body #btn_user :hover {
   .button-40 {
     padding: 0.75rem 1.5rem;
   }
+}
+#header-listUser {
+  margin-bottom: 1%;
+}
+
+#header-listTasks {
+  margin-bottom: 1%;
+}
+
+#header-registerUser {
+  margin-bottom: -1%;
 }/*# sourceMappingURL=style.css.map */
