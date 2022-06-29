@@ -41,11 +41,13 @@ function showTasks() {
         labelUser.innerHTML = "User";
         li.appendChild(labelUser);
 
-     
         let selectUser = document.createElement("select");
         selectUser.classList.add("form-control");
-        selectUser.setAttribute("id", "user");
-        li.appendChild(selectUser);
+        selectUser.classList.add("user");
+        selectUser.disabled = true;
+        li.appendChild(selectUser);       
+        var select = selectUser;
+        GetDBSelect(task, select);
 
 
         // add a button that alert "hello world"
@@ -54,17 +56,20 @@ function showTasks() {
         button.classList.add("btn", "btn-primary");
         button.addEventListener("click", function () {
           // make all inputs editable
+          selectUser.disabled = false;
           inputDescription.readOnly = false;
           inputDate.readOnly = false;
-          selectUser.readOnly = false;
           button.innerHTML = "Save";
 
           button.addEventListener("click", function () {
-            alert(task.id);
+            // alert(task.id);
             let idteste = task.id;
-            alert(idteste);
+            // alert(idteste);
             this.id = task.id;
             function updateTask() {
+              selectUser.disabled = true;
+              inputDescription.readOnly = true;
+              inputDate.readOnly = true;
               let task = {
                 description: inputDescription.value,
                 date: inputDate.value,
@@ -95,3 +100,34 @@ function showTasks() {
     });
 }
 showTasks();
+
+async function GetDBSelect(task, select) {
+  var res = await fetch('http://localhost:3000/api/v1/users');
+  const data = await res.json();
+
+  // let option = document.createElement("option");
+//   Object.keys(task.user).map((user, index) => {   
+//     option.textContent = task.user.name;
+//     option.value = task.user._id;     
+//     select.appendChild(option);
+//  });
+console.log(task)
+ data.forEach((element) => {
+    console.log(element)   
+      let option = document.createElement("option");
+      if(element._id === task.user._id){
+        option.setAttribute("selected", "selected");
+        option.textContent = element.name;
+        option.value = element._id;     
+      select.appendChild(option);
+      }
+      option.textContent = element.name;
+      option.value = element._id;     
+      select.appendChild(option);
+      
+        
+      
+
+  }); 
+     
+};
