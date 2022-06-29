@@ -1,13 +1,13 @@
-@import "bourbon";
-
 ul {
   display: flex;
   flex-direction: row;
+  width: 100%;
   li {
     margin-right: 2%;
     display: flex;
     flex-wrap: wrap;
     flex-basis: 100%;
+
     .form-control {
       min-width: 20%;
       max-width: 100%;

@@ -1,8 +1,7 @@
 "use strict";
 
-
 function showTasks() {
-   fetch("http://localhost:3000/api/v1/tasks")
+  fetch("http://localhost:3000/api/v1/tasks")
     .then((response) => response.json())
     .then((data) => {
       let ul = document.createElement("ul");
@@ -24,7 +23,6 @@ function showTasks() {
         inputDescription.value = task.description;
         li.appendChild(inputDescription);
 
-
         let labelDate = document.createElement("label");
         labelDate.innerHTML = "Date";
         li.appendChild(labelDate);
@@ -36,7 +34,6 @@ function showTasks() {
         inputDate.value = task.date;
         li.appendChild(inputDate);
 
-
         let labelUser = document.createElement("label");
         labelUser.innerHTML = "User";
         li.appendChild(labelUser);
@@ -45,26 +42,23 @@ function showTasks() {
         selectUser.classList.add("form-control");
         selectUser.classList.add("user");
         selectUser.disabled = true;
-        li.appendChild(selectUser);       
+        li.appendChild(selectUser);
         var select = selectUser;
         GetDBSelect(task, select);
 
-
-        // add a button that alert "hello world"
+        // criação do botao para editar task
         let button = document.createElement("button");
-        button.innerHTML = "Edit";
+        button.innerHTML = "Edit Task";
         button.classList.add("btn", "btn-primary");
         button.addEventListener("click", function () {
-          // make all inputs editable
+          // fazendo todos campos não serem mais editaveis
           selectUser.disabled = false;
           inputDescription.readOnly = false;
           inputDate.readOnly = false;
           button.innerHTML = "Save";
 
           button.addEventListener("click", function () {
-            // alert(task.id);
             let idteste = task.id;
-            // alert(idteste);
             this.id = task.id;
             function updateTask() {
               selectUser.disabled = true;
@@ -91,10 +85,35 @@ function showTasks() {
                 });
             }
             updateTask();
-            button.innerHTML = "Edit";
+            button.innerHTML = "Edit Task";
+            alert("Task updated");
           });
         });
         li.appendChild(button);
+
+        let buttonDelete = document.createElement("button");
+        buttonDelete.innerHTML = "Delete Task";
+        buttonDelete.classList.add("btn", "btn-danger");
+        buttonDelete.addEventListener("click", function () {
+          let idteste = task.id;
+          fetch("http://localhost:3000/api/v1/tasks/" + idteste, {
+            method: "DELETE",
+          })
+            .then(function (response) {
+              return response.json();
+            })
+            .then(function (data) {
+              console.log(data);
+            });
+          alert("Task deleted");
+
+          li.remove();
+        });
+        li.appendChild(buttonDelete);
+        // ajustando tamanho dos botoes
+        buttonDelete.style.marginLeft = "20px";
+        button.style.marginTop = "20px";
+        buttonDelete.style.marginTop = "20px";
       });
       document.body.appendChild(ul);
     });
@@ -102,32 +121,21 @@ function showTasks() {
 showTasks();
 
 async function GetDBSelect(task, select) {
-  var res = await fetch('http://localhost:3000/api/v1/users');
+  var res = await fetch("http://localhost:3000/api/v1/users");
   const data = await res.json();
 
-  // let option = document.createElement("option");
-//   Object.keys(task.user).map((user, index) => {   
-//     option.textContent = task.user.name;
-//     option.value = task.user._id;     
-//     select.appendChild(option);
-//  });
-console.log(task)
- data.forEach((element) => {
-    console.log(element)   
-      let option = document.createElement("option");
-      if(element._id === task.user._id){
-        option.setAttribute("selected", "selected");
-        option.textContent = element.name;
-        option.value = element._id;     
-      select.appendChild(option);
-      }
+  console.log(task);
+  data.forEach((element) => {
+    console.log(element);
+    let option = document.createElement("option");
+    if (element._id === task.user._id) {
+      option.setAttribute("selected", "selected");
       option.textContent = element.name;
-      option.value = element._id;     
+      option.value = element._id;
       select.appendChild(option);
-      
-        
-      
-
-  }); 
-     
-};
+    }
+    option.textContent = element.name;
+    option.value = element._id;
+    select.appendChild(option);
+  });
+}

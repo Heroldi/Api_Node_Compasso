@@ -152,7 +152,6 @@ function onKeyCheckCpf() {
     state.style.backgroundColor = "white";
   }
 }
-// if birthdate is different from the current date, the background color will be red
 function onKeyCheckBirthdate() {
   if (birthdate.value != "") {
     birthdate.style.backgroundColor = "white";
@@ -294,7 +293,7 @@ function validarEmail() {
   var emailFilter = /^.+@.+\..{2,}$/;
   if (!emailFilter.test(email.value)) {
     console.log("Invalid data entered");
-    //make the background color of the email input red
+    // deixar background do campo vermelho
     email.style.backgroundColor = "#ffcccc";
     return false;
   } else {
@@ -328,7 +327,7 @@ function formatarZipcode() {
   }
 }
 
-// if there are 11 numbers inside #cpf, then it's valid
+// se tem 11 numeros dentro do #cpf, então é válido
 function validarCPF() {
   var cpf = document.querySelector("#cpf");
   var cpfFormatado = cpf.value.replace(/\D/g, "");
@@ -343,7 +342,7 @@ function validarCPF() {
   }
 }
 
-// clear all fields
+// limpar campos
 function clearFields() {
   fullName.value = "";
   cpf.value = "";
@@ -359,10 +358,10 @@ function clearFields() {
   zipcode.value = "";
 }
 
-// validando data maxima de nascimento
+// validando data maxima de nascimento (18 anos)
 var today = new Date();
 var dd = today.getDate();
-var mm = today.getMonth() + 1; //January is 0!
+var mm = today.getMonth() + 1; // janeiro é 0
 var yyyy = today.getFullYear();
 
 if (dd < 10) {
@@ -374,4 +373,3 @@ if (mm < 10) {
 }
 
 today = yyyy + "-" + mm + "-" + dd;
-// document.getElementById("date").setAttribute("max", today);

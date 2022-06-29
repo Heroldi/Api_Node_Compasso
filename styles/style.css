@@ -1,6 +1,7 @@
 ul {
   display: flex;
   flex-direction: row;
+  width: 100%;
 }
 ul li {
   margin-right: 2%;
@@ -110,21 +111,35 @@ body #btn_user :hover {
   color: #000;
   background: rgb(255, 218, 87);
 }
-#body-task .select-dropdown,
-#body-task .select-dropdown * {
+#body-task * {
   margin: 0;
   padding: 0;
   position: relative;
   box-sizing: border-box;
 }
+#body-task html,
+#body-task body {
+  height: 100%;
+}
+#body-task .page {
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -17px -54px;
+}
 #body-task .select-dropdown {
   position: relative;
   background-color: #e6e6e6;
-  border-radius: 4px;
+  width: auto;
+  float: left;
+  max-width: 100%;
+  border-radius: 2px;
 }
 #body-task .select-dropdown select {
+  font-family: "helvetica neue", helvetica;
   font-size: 1rem;
-  font-weight: normal;
+  font-weight: 200;
   max-width: 100%;
   padding: 8px 24px 8px 10px;
   border: none;
@@ -133,20 +148,24 @@ body #btn_user :hover {
   -moz-appearance: none;
   appearance: none;
 }
-#body-task .select-dropdown select:active,
-#body-task .select-dropdown select:focus {
+#body-task .select-dropdown select:active, #body-task .select-dropdown select:focus {
   outline: none;
   box-shadow: none;
 }
 #body-task .select-dropdown:after {
-  content: "";
+  content: " ";
   position: absolute;
   top: 50%;
+  margin-top: -2px;
   right: 8px;
   width: 0;
   height: 0;
-  margin-top: -2px;
-  border-top: 5px solid #aaa;
-  border-right: 5px solid transparent;
   border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #aaa;
+}
+
+.btn .btn-danger {
+  width: 500px;
+  background-color: #000;
 }/*# sourceMappingURL=style.css.map */

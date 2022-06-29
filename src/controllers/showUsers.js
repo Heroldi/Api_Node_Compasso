@@ -11,9 +11,8 @@ function showUsers() {
 
         user.id = user._id;
 
-        // create a input class "form-control" type="text" readonly with the user.name inside the input
-
-        // create a label name
+        // etapa de injeção de html com dados do usuarios
+        // label e inputs para cada campo
         let label = document.createElement("label");
         label.innerHTML = "Name";
         li.appendChild(label);
@@ -25,12 +24,10 @@ function showUsers() {
         inputName.value = user.name;
         li.appendChild(inputName);
 
-        // create a label cpf
         let labelCpf = document.createElement("label");
         labelCpf.innerHTML = "CPF";
         li.appendChild(labelCpf);
 
-        // create a input class "form-control" type="text" readonly with the user.cpf inside the input
         let inputCpf = document.createElement("input");
         inputCpf.classList.add("form-control");
         inputCpf.type = "text";
@@ -38,12 +35,10 @@ function showUsers() {
         inputCpf.value = user.cpf;
         li.appendChild(inputCpf);
 
-        // create a label birthdate
         let labelBirthdate = document.createElement("label");
         labelBirthdate.innerHTML = "Birthdate";
         li.appendChild(labelBirthdate);
 
-        // create a input class "form-control" type="text" readonly with the user.birthdate inside the input
         let inputBirthdate = document.createElement("input");
         inputBirthdate.classList.add("form-control");
         inputBirthdate.type = "text";
@@ -51,7 +46,6 @@ function showUsers() {
         inputBirthdate.value = user.birthDate;
         li.appendChild(inputBirthdate);
 
-        // create a label email
         let labelEmail = document.createElement("label");
         labelEmail.innerHTML = "Email:";
         li.appendChild(labelEmail);
@@ -63,9 +57,6 @@ function showUsers() {
         inputEmail.value = user.email;
         li.appendChild(inputEmail);
 
-        // create a input class "form-control" type="text" readonly with the user.password inside the input
-
-        // create a label password
         let labelPassword = document.createElement("label");
         labelPassword.innerHTML = "Password";
         li.appendChild(labelPassword);
@@ -77,12 +68,10 @@ function showUsers() {
         inputPassword.value = user.password;
         li.appendChild(inputPassword);
 
-        // create a label adress
         let labelAdress = document.createElement("label");
         labelAdress.innerHTML = "Adress";
         li.appendChild(labelAdress);
 
-        // create a input class "form-control" type="text" readonly with the user.adress inside the input
         let inputAdress = document.createElement("input");
         inputAdress.classList.add("form-control");
         inputAdress.type = "text";
@@ -90,12 +79,10 @@ function showUsers() {
         inputAdress.value = user.address;
         li.appendChild(inputAdress);
 
-        // create a label number
         let labelNumber = document.createElement("label");
         labelNumber.innerHTML = "Number";
         li.appendChild(labelNumber);
 
-        // create a input class "form-control" type="text" readonly with the user.number inside the input
         let inputNumber = document.createElement("input");
         inputNumber.classList.add("form-control");
         inputNumber.type = "text";
@@ -103,12 +90,10 @@ function showUsers() {
         inputNumber.value = user.number;
         li.appendChild(inputNumber);
 
-        // create a label complement
         let labelComplement = document.createElement("label");
         labelComplement.innerHTML = "Complement";
         li.appendChild(labelComplement);
 
-        // create a input class "form-control" type="text" readonly with the user.complement inside the input
         let inputComplement = document.createElement("input");
         inputComplement.classList.add("form-control");
         inputComplement.type = "text";
@@ -116,12 +101,10 @@ function showUsers() {
         inputComplement.value = user.complement;
         li.appendChild(inputComplement);
 
-        // create a label city
         let labelCity = document.createElement("label");
         labelCity.innerHTML = "City";
         li.appendChild(labelCity);
 
-        // create a input class "form-control" type="text" readonly with the user.city inside the input
         let inputCity = document.createElement("input");
         inputCity.classList.add("form-control");
         inputCity.type = "text";
@@ -129,12 +112,10 @@ function showUsers() {
         inputCity.value = user.city;
         li.appendChild(inputCity);
 
-        // create a label state
         let labelState = document.createElement("label");
         labelState.innerHTML = "State";
         li.appendChild(labelState);
 
-        // create a input class "form-control" type="text" readonly with the user.state inside the input
         let inputState = document.createElement("input");
         inputState.classList.add("form-control");
         inputState.type = "text";
@@ -142,12 +123,10 @@ function showUsers() {
         inputState.value = user.state;
         li.appendChild(inputState);
 
-        // create a label country
         let labelCountry = document.createElement("label");
         labelCountry.innerHTML = "Country";
         li.appendChild(labelCountry);
 
-        // create a input class "form-control" type="text" readonly with the user.country inside the input
         let inputCountry = document.createElement("input");
         inputCountry.classList.add("form-control");
         inputCountry.type = "text";
@@ -155,12 +134,10 @@ function showUsers() {
         inputCountry.value = user.country;
         li.appendChild(inputCountry);
 
-        // create a label zipcode
         let labelZipcode = document.createElement("label");
         labelZipcode.innerHTML = "Zipcode";
         li.appendChild(labelZipcode);
 
-        // create a input class "form-control" type="text" readonly with the user.zipcode inside the input
         let inputZipcode = document.createElement("input");
         inputZipcode.classList.add("form-control");
         inputZipcode.type = "text";
@@ -168,12 +145,12 @@ function showUsers() {
         inputZipcode.value = user.zipcode;
         li.appendChild(inputZipcode);
 
-        // add a button that alert "hello world"
+        // criação do botão editar
         let button = document.createElement("button");
         button.innerHTML = "Edit User";
         button.classList.add("btn", "btn-primary");
         button.addEventListener("click", function () {
-          // make all inputs editable
+          // transforma todos campos editaveis
           inputName.readOnly = false;
           inputCpf.readOnly = false;
           inputBirthdate.readOnly = false;
@@ -188,11 +165,9 @@ function showUsers() {
           inputZipcode.readOnly = false;
           button.innerHTML = "Save";
 
-          // if clicked again, make all inputs readonly
+          // se clicado denovo, campos ficam não editáveis
           button.addEventListener("click", function () {
-            // alert(user.id);
-            let idteste = user.id;
-            // alert(idteste);
+            let idUsuario = user.id;
             this.id = user.id;
             function updateUser() {
               let user = {
@@ -210,7 +185,7 @@ function showUsers() {
                 zipcode: inputZipcode.value,
               };
 
-              fetch("http://localhost:3000/api/v1/users/" + idteste, {
+              fetch("http://localhost:3000/api/v1/users/" + idUsuario, {
                 method: "PUT",
                 headers: {
                   "Content-Type": "application/json",
@@ -242,7 +217,7 @@ function showUsers() {
             alert("User updated!");
           });
         });
-        // add a button id="delete" class="btn btn-primary" type="button" value="Edit"
+        // criação do botão delete usuario
         let buttonEdit = document.createElement("button");
         buttonEdit.id = "edit";
         buttonEdit.innerHTML = "Delete User";
@@ -250,21 +225,19 @@ function showUsers() {
         buttonEdit.type = "button";
         buttonEdit.value = "Edit";
         li.appendChild(buttonEdit);
-        // add a event listener to the button that alert hello world
+
         buttonEdit.addEventListener("click", function () {
-          // execute a fetch to delete the current user
+          // execução da fetch para deletar os usuarios
           fetch("http://localhost:3000/api/v1/users/" + user.id, {
             method: "DELETE",
           });
           alert("User deleted!");
-          // remove the current user from the list
+          // remove a <li> do usuario deletado
           li.remove();
         });
-        // make btn-danger 50px margin-right
+        // ajustando os botoes
         buttonEdit.style.marginRight = "50px";
-        // make btn-danger 20px margin top
         buttonEdit.style.marginTop = "20px";
-        // make btn-primary 20px margin top
         button.style.marginTop = "20px";
 
         li.appendChild(button);
@@ -275,10 +248,3 @@ function showUsers() {
     });
 }
 showUsers();
-
-// if button Class ="btn btn-dark" is clicked, alert the search value
-// let button = document.querySelector(".btn-dark");
-// let searchUser = document.querySelector("#search-id");
-// button.addEventListener("click", function () {
-//   alert(searchUser.value);
-// });

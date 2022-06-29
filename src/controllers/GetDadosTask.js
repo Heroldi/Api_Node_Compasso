@@ -34,16 +34,16 @@ function GetDadosTask() {
     alert("Please insert a valid date");
   }
 }
-// simple validation for date
+// validação pra data
 function validaData() {
   var date = document.querySelector("#date");
-  // if date is greather than the current date alert "Data valida"
+  // se a data é maior que a data atual, retorna data valida
   if (date.value > new Date().toISOString().split("T")[0]) {
     return true;
   }
 }
 
-// function that clear the inputs
+// função pra limpar os campos
 function clearInputs() {
   var description = document.querySelector("#description");
   var date = document.querySelector("#date");
