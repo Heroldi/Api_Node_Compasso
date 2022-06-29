@@ -167,8 +167,10 @@ function onKeyCheckEmail() {
 function onKeyCheckPassword() {
   if (password.value.length > 6) {
     password.style.backgroundColor = "white";
+    return true;
   } else {
     password.style.backgroundColor = "#ffcccc";
+    return false;
   }
 }
 
@@ -243,6 +245,8 @@ function teste() {
     checkEmptyCountry();
     checkEmptyZipcode();
     alert("Please fill all fields");
+  } else if (onKeyCheckPassword() == false) {
+    alert("Passoword must be at least 6 characters");
   } else {
     checkEmptyName();
     checkEmptyCpf();
