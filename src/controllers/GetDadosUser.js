@@ -165,8 +165,10 @@ function onKeyCheckEmail() {
 }
 
 function onKeyCheckPassword() {
-  if (password.value.length > 1) {
+  if (password.value.length > 6) {
     password.style.backgroundColor = "white";
+  } else {
+    password.style.backgroundColor = "#ffcccc";
   }
 }
 

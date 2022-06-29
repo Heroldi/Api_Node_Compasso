@@ -4,7 +4,7 @@ wes.addEventListener("click", function (event) {
 });
 
 function GetDadosTask() {
-  if (validaData() == true) {
+  if (validaData() == true && validaDescricao() == true) {
     var description = document.querySelector("#description");
     var date = document.querySelector("#date");
     var user = document.querySelector("#user");
@@ -31,7 +31,7 @@ function GetDadosTask() {
     alert("Task successfully created");
     clearInputs();
   } else {
-    alert("Please insert a valid date");
+    alert("Please fill all fields");
   }
 }
 // validação pra data
@@ -49,4 +49,13 @@ function clearInputs() {
   var date = document.querySelector("#date");
   description.value = "";
   date.value = "";
+}
+
+function validaDescricao() {
+  var description = document.querySelector("#description");
+  if (description.value == "") {
+    return false;
+  } else {
+    return true;
+  }
 }
